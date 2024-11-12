@@ -1,12 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-    <body>
-        <h1>Xin chào, đây là lần học Git đầu tiên của tôi</h1>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #calculator {
+            border: 2px solid #ccc;
+            padding: 20px;
+            display: inline-block;
+        }
+        input {
+            width: 50px;
+            height: 30px;
+            font-size: 16px;
+        }
+        button {
+            width: 50px;
+            height: 30px;
+            font-size: 16px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="calculator">
+
+        <h2>Scientific Calculator</h2>
+
+        <input type="text" id="result" disabled>
+
+        <br>
+
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button onclick="appendValue('+')">+</button>
+
+        <br>
+
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button onclick="appendValue('-')">-</button>
+
+        <br>
+
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button onclick="appendValue('*')">*</button>
+
+        <br>
+
+        <button onclick="appendValue('0')">0</button>
+        <button onclick="clearResult()">C</button>
+        <button onclick="calculateResult()">=</button>
+        <button onclick="appendValue('/')">/</button>
+
+    </div>
+
+    <script>
+        function appendValue(value) {
+            document.getElementById('result').value += value;
+        }
+
+        function clearResult() {
+            document.getElementById('result').value = '';
+        }
+
+        function calculateResult() {
+            try {
+                document.getElementById('result').value = eval(document.getElementById('result').value);
+            } catch (error) {
+                document.getElementById('result').value = 'Error';
+            }
+        }
+    </script>
+
+</body>
 </html>

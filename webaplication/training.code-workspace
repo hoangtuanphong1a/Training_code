@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../bcas-prelims"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "training"
+	}
+}
